@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "E155A90E-2279-4A36-B085-7990FBC5E4BC",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:ArtworksApp.xcodeproj",
+        "identifier" : "9CFA8A442B7EAC0C007C78DA",
+        "name" : "DataTests"
+      }
+    }
+  ],
+  "version" : 1
+}

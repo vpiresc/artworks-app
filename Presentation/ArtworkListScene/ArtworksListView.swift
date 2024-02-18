@@ -16,8 +16,8 @@ private enum ArtworkListViewMargins {
 public struct ArtworksListView<VM: ArtworksListViewModel>: View {
     @ObservedObject public var viewModel: VM
     @State private var showingAlert = false
-    @State var last: Int?
     private typealias Margins = ArtworkListViewMargins
+    @State private var alertMessage = ""
     
     public init(viewModel: VM) {
         self.viewModel = viewModel
@@ -25,7 +25,7 @@ public struct ArtworksListView<VM: ArtworksListViewModel>: View {
     
     public var body: some View {
         NavigationView {
-            ScrollViewReader { proxy in
+//            ScrollViewReader { proxy in
                 ScrollView {
                     VStack(spacing: Margins.vStackSpacing) {
                         
@@ -53,7 +53,6 @@ public struct ArtworksListView<VM: ArtworksListViewModel>: View {
                                                 context: nil,
                                                 cacheType: .disk
                                             )
-                                            proxy.scrollTo(artworks.uuid)
                                         }
                                     VStack(alignment: .leading) {
                                         Text(artworks.title)
@@ -73,7 +72,7 @@ public struct ArtworksListView<VM: ArtworksListViewModel>: View {
                     }
                     Button {
                         loadNextPage()
-                        proxy.scrollTo(viewModel.artworksList.last?.uuid, anchor: .bottom)
+//                        proxy.scrollTo(viewModel.artworksList.last?.uuid, anchor: .bottom)
                     } label: {
                         HStack {
                             Image(systemName: Strings.load_more_image)
@@ -88,7 +87,7 @@ public struct ArtworksListView<VM: ArtworksListViewModel>: View {
                 
             }
             .padding()
-        }.scrollTargetLayout()
+//        }.scrollTargetLayout()
             .id(UUID())
             .navigationTitle(Strings.artworks_list_screen_title)
             .refreshable {
@@ -98,11 +97,7 @@ public struct ArtworksListView<VM: ArtworksListViewModel>: View {
                 await displayData()
             }
             .alert(isPresented: $showingAlert) {
-                AlertFactory.make(action: {
-                    Task {
-                        await displayData()
-                    }
-                })
+                AlertFactory.make(title: alertMessage)
             }
     }
     
@@ -126,9 +121,14 @@ extension ArtworksListView: ArtworksListViewModelDisplayLogic {
     public func displayNextPage() async{
         do {
             try await viewModel.goToNextPage(viewModel.pagination?.nextPage)
+            displayAlert()
         } catch {
             showingAlert = true
-            print(error)
         }
+    }
+    
+    public func displayAlert() {
+        alertMessage = viewModel.showAlertMessage()
+        showingAlert = viewModel.shouldShowAlert()
     }
 }

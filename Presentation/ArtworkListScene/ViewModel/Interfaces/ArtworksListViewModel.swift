@@ -5,6 +5,7 @@ import SwiftUI
 public protocol ArtworksListViewModelDisplayLogic {
     func displayData() async
     func displayNextPage() async
+    func displayAlert()
 }
 
 public protocol ArtworksListViewModelInputLogic {
@@ -16,6 +17,8 @@ public protocol ArtworksListViewModelInputLogic {
 public protocol ArtworksListViewModelOutputLogic {
     var artworksList: [Artworks] { get }
     var pagination: Pagination? { get }
+    func showAlertMessage() -> String
+    func shouldShowAlert() -> Bool
 }
 
 public protocol ArtworksListViewModel: ArtworksListViewModelOutputLogic, ArtworksListViewModelInputLogic, ObservableObject {}

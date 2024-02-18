@@ -15,8 +15,21 @@ extension ArtworksArtistRepositoryImpl: ArtworksArtistRepository {
         }
         let (data, response) = try await session.data(from: url)
         
-        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-             throw NetworkError.invalidServerResponse
+        if let httpResponse = response as? HTTPURLResponse {
+            switch httpResponse.statusCode {
+            case 200...299:
+                break
+            case 401:
+                throw NetworkError.unauthorized
+            case 403:
+                throw NetworkError.forbidden
+            case 400...499:
+                throw NetworkError.badRequest
+            case 500...599:
+                throw NetworkError.serverError
+            default:
+                throw NetworkError.invalidServerResponse
+            }
         }
         
         let artworksArtistModelData = try JSONDecoder().decode(ArtworksArtistModelData.self, from: data)

@@ -25,16 +25,12 @@ public struct ArtworkDetailViewFactory {
 }
 
 public struct AlertFactory {
-    public static func  make(action: @escaping  () -> Void) -> Alert {
-        return  Alert(
-            title: Text(Strings.error_title),
-            message: Text(Strings.error_message),
-            primaryButton: .default(Text(Strings.error_tryAgain_button), action: {
-                action()
-            }),
-            secondaryButton: .cancel(Text(Strings.error_cancel_button))
-        )
-    }
+    public static func  make(
+        title: String = Strings.error_generic_title,
+        primaryButton: String = Strings.error_button) -> Alert {
+            return  Alert(
+                title: Text(title),
+                dismissButton: .default(Text(primaryButton))
+            )
+        }
 }
-
-

@@ -2,14 +2,15 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 private enum ArtworksDetailViewMargins {
-    static let webImageSize: CGFloat = 400
+    static let webImageSize: CGFloat = 300
 }
 
 public struct ArtworksDetailView<VM: ArtworksDetailViewModel>: View {
     @ObservedObject public var viewModel: VM
     @State private var showingAlert = false
+    @State private var alertMessage = ""
     private typealias Margins = ArtworksDetailViewMargins
-    let artistId: Int
+    private let artistId: Int
     
     public init(viewModel: VM, artistId: Int) {
         self.viewModel = viewModel
@@ -21,20 +22,20 @@ public struct ArtworksDetailView<VM: ArtworksDetailViewModel>: View {
             VStack() {
                 let artistDescription = viewModel.artworksArtist?.description ?? ""
                 let artworks = viewModel.artworks
-                Text(viewModel.artworksArtist?.title ?? "Not available")
-                Text(artworks.title)
-                Text(artworks.thumbnail.subtitle )
-//                AsyncImage(url: URL(string: artworks.thumbnail.image )) { image in
-//                    image.resizable()
-//                        .aspectRatio(contentMode: .fit)
-//                        .frame(width: Margins.webImageSize, height: Margins.webImageSize)
-//                } placeholder: {
-//                    ProgressView()
-//                }
+                Text(artworks.title).fontWeight(.bold)
+                    .multilineTextAlignment(.leading)
+                Text(viewModel.artworksArtist?.title ?? "Unknown Artist")
+                    .fontWeight(.light)
+                    .foregroundColor(.gray)
+                    .multilineTextAlignment(.trailing)
+
+                Text(artworks.thumbnail.subtitle)
+                    .multilineTextAlignment(.leading)
+                    .padding()
                     WebImage(url: URL(string: artworks.thumbnail.image))
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: Margins.webImageSize, height: Margins.webImageSize)
+                        .frame(height: Margins.webImageSize, alignment: .center)
                         .onAppear {
                             let cacheKey = SDWebImageManager.shared.cacheKey(for: URL(string: artworks.thumbnail.image))
                             SDWebImageManager.shared.imageCache.store?(
@@ -45,29 +46,16 @@ public struct ArtworksDetailView<VM: ArtworksDetailViewModel>: View {
                                 cacheType: .disk
                             )
                         }
-                renderHtmlText(artistDescription)
+                Text(artistDescription)
                 }
         }.id(UUID())
             .navigationTitle(Strings.artworks_detail_screen_title)
+            .padding()
             .task {
                 await displayData(artistId: artistId)
             }.alert(isPresented: $showingAlert) {
-                AlertFactory.make(action: {
-                    Task {
-                        await displayData(artistId: artistId)
-                    }
-                })
+                AlertFactory.make(title: alertMessage)
             }
-    }
-    
-    private func renderHtmlText(_ text: String?) -> Text {
-        let artistDescription = viewModel.artworksArtist?.description ?? ""
-        if let nsAttributedString = try? NSAttributedString(data: Data((artistDescription.utf8)), options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil),
-           let attributedString = try? AttributedString(nsAttributedString, including: \.uiKit) {
-            return Text(attributedString).font(.body)
-        } else {
-            return Text(artistDescription.description)
-        }
     }
 }
 
@@ -75,10 +63,15 @@ extension ArtworksDetailView: ArtworksDetailViewModelDisplayLogic {
     public func displayData(artistId: Int) async {
         do {
             try await viewModel.prepareData(artistId: artistId)
+            displayAlert()
         } catch {
             showingAlert = true
-            print(error)
         }
+    }
+    
+    public func displayAlert() {
+        alertMessage = viewModel.showAlertMessage()
+        showingAlert = viewModel.shouldShowAlert()
     }
 }
 

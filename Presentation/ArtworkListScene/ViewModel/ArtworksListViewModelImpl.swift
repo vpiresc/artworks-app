@@ -6,6 +6,9 @@ import SwiftUI
 public class ArtworksListViewModelImpl {
     @Published public var artworksList: [Artworks] = []
     @Published public var pagination: Pagination?
+    @Published public var alertMessage = ""
+    public var showAlert = false
+
     
     private let useCase: GetArtworksUseCase
     
@@ -34,4 +37,8 @@ extension ArtworksListViewModelImpl: ArtworksListViewModel {
             throw(PresentationError.unableToLoad)
         }
     }
+    
+    public func showAlertMessage() -> String { return alertMessage }
+    
+    public func shouldShowAlert() -> Bool { showAlert }
 }

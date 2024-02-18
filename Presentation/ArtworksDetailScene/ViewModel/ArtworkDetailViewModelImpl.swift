@@ -6,7 +6,8 @@ import SwiftUI
 public class ArtworksDetailViewModelImpl {
     @Published public var artworksArtist: ArtworksArtist?
     @Published public var artworks: Artworks
-    
+    @Published public var alertMessage = ""
+    public var showAlert = false
     private let useCase: GetArtworksArtistUseCase
     
     public init(useCase: GetArtworksArtistUseCase, artworks: Artworks) {
@@ -20,8 +21,16 @@ extension ArtworksDetailViewModelImpl: ArtworksDetailViewModel {
         do {
             let artworksArtistModelData = try await useCase.execute(with: artistId)
             artworksArtist = artworksArtistModelData.data
+        } catch NetworkError.unableToFetch {
+            alertMessage = Strings.error_missing_title
+            showAlert = true
         } catch {
-            throw(PresentationError.unableToLoad)
+            alertMessage = Strings.error_generic_title
+            showAlert = true
         }
     }
+    
+    public func showAlertMessage() -> String { return alertMessage }
+    
+    public func shouldShowAlert() -> Bool { showAlert }
 }
