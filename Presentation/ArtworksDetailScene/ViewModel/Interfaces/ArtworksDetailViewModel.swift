@@ -3,11 +3,11 @@ import Domain
 import SwiftUI
 
 public protocol ArtworksDetailViewModelDisplayLogic {
-    func displayData(artistId: Int?) async
+    func displayData(artistId: Int) async
 }
 
 public protocol ArtworksDetailViewModelInputLogic {
-    func prepareData(artistId: Int?) async throws
+    func prepareData(artistId: Int) async throws
 }
 
 @MainActor

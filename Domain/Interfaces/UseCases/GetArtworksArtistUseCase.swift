@@ -1,5 +1,5 @@
 import Foundation
 
 public protocol GetArtworksArtistUseCase {
-    func execute(with artistId: Int?) async throws -> ArtworksArtistModelData
+    func execute(with artistId: Int) async throws -> ArtworksArtistModelData
 }

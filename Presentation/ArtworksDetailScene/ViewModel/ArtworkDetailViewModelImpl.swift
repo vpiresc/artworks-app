@@ -16,7 +16,7 @@ public class ArtworksDetailViewModelImpl {
 }
 
 extension ArtworksDetailViewModelImpl: ArtworksDetailViewModel {
-    public func prepareData(artistId: Int?) async throws {
+    public func prepareData(artistId: Int) async throws {
         do {
             let artworksArtistModelData = try await useCase.execute(with: artistId)
             artworksArtist = artworksArtistModelData.data

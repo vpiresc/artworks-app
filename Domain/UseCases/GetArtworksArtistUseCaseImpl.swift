@@ -7,9 +7,9 @@ public final class GetArtworksArtistUseCaseImpl: GetArtworksArtistUseCase {
         self.repository = repository
     }
     
-    public func execute(with artistId: Int?) async throws -> ArtworksArtistModelData {
+    public func execute(with artistId: Int) async throws -> ArtworksArtistModelData {
         do {
-            return try await repository.fetchArtworksArtistModel(Constants.Urls.artworksDetail(artistId: artistId ?? nil))
+            return try await repository.fetchArtworksArtistModel(Constants.Urls.artworksDetail(artistId: artistId))
         } catch {
             throw(NetworkError.unableToFetch)
         }

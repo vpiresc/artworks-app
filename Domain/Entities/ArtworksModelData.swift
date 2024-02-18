@@ -8,7 +8,8 @@ public struct ArtworksModelData: Decodable {
     }
 }
 
-public struct Artworks: Decodable {    
+public struct Artworks: Identifiable, Decodable {
+    public var uuid = UUID()
     public let id: Int
     public let artistId: Int?
     public let title: String

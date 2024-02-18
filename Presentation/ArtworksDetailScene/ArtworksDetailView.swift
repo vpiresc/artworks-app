@@ -1,11 +1,17 @@
 import SwiftUI
+import SDWebImageSwiftUI
+
+private enum ArtworksDetailViewMargins {
+    static let webImageSize: CGFloat = 400
+}
 
 public struct ArtworksDetailView<VM: ArtworksDetailViewModel>: View {
     @ObservedObject public var viewModel: VM
     @State private var showingAlert = false
-    let artistId: Int?
+    private typealias Margins = ArtworksDetailViewMargins
+    let artistId: Int
     
-    public init(viewModel: VM, artistId: Int?) {
+    public init(viewModel: VM, artistId: Int) {
         self.viewModel = viewModel
         self.artistId = artistId
     }
@@ -13,36 +19,44 @@ public struct ArtworksDetailView<VM: ArtworksDetailViewModel>: View {
     public var body: some View {
         ScrollView {
             VStack() {
-                let artistName = viewModel.artworksArtist?.title ?? ""
-                let artistDescription = viewModel.artworksArtist?.description
-                Text(artistName)
+                let artistDescription = viewModel.artworksArtist?.description ?? ""
                 let artworks = viewModel.artworks
-                Text(artworks.title )
+                Text(viewModel.artworksArtist?.title ?? "Not available")
+                Text(artworks.title)
                 Text(artworks.thumbnail.subtitle )
-                AsyncImage(url: URL(string: artworks.thumbnail.image )) { image in
-                    image.resizable()
+//                AsyncImage(url: URL(string: artworks.thumbnail.image )) { image in
+//                    image.resizable()
+//                        .aspectRatio(contentMode: .fit)
+//                        .frame(width: Margins.webImageSize, height: Margins.webImageSize)
+//                } placeholder: {
+//                    ProgressView()
+//                }
+                    WebImage(url: URL(string: artworks.thumbnail.image))
+                        .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 300, height: 300)
-                } placeholder: {
-                    ProgressView()
-                }
+                        .frame(width: Margins.webImageSize, height: Margins.webImageSize)
+                        .onAppear {
+                            let cacheKey = SDWebImageManager.shared.cacheKey(for: URL(string: artworks.thumbnail.image))
+                            SDWebImageManager.shared.imageCache.store?(
+                                nil,
+                                imageData: nil,
+                                forKey: cacheKey,
+                                context: nil,
+                                cacheType: .disk
+                            )
+                        }
                 renderHtmlText(artistDescription)
-            }
+                }
         }.id(UUID())
-            .navigationTitle("Artworks Detail")
+            .navigationTitle(Strings.artworks_detail_screen_title)
             .task {
                 await displayData(artistId: artistId)
             }.alert(isPresented: $showingAlert) {
-                Alert(
-                    title: Text(Strings.error_title),
-                    message: Text(Strings.error_message),
-                    primaryButton: .default(Text(Strings.error_tryAgain_button), action: {
-                        Task {
-                            await displayData(artistId: artistId)
-                        }
-                    }),
-                    secondaryButton: .cancel(Text(Strings.error_cancel_button))
-                    )
+                AlertFactory.make(action: {
+                    Task {
+                        await displayData(artistId: artistId)
+                    }
+                })
             }
     }
     
@@ -58,21 +72,13 @@ public struct ArtworksDetailView<VM: ArtworksDetailViewModel>: View {
 }
 
 extension ArtworksDetailView: ArtworksDetailViewModelDisplayLogic {
-    public func displayData(artistId: Int?) async {
+    public func displayData(artistId: Int) async {
         do {
             try await viewModel.prepareData(artistId: artistId)
         } catch {
             showingAlert = true
             print(error)
         }
-    }
-}
-
-
-public extension NSMutableAttributedString {
-    @discardableResult func applyFont(_ font: UIFont) -> NSMutableAttributedString {
-        addAttributes([ NSAttributedString.Key.font: UIFontMetrics.default.scaledFont(for: font)], range: NSRange(location: 0, length: string.count))
-        return self
     }
 }
 

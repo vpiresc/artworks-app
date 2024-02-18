@@ -35,9 +35,8 @@
 		9CAA6C2F2B7FAC8000B056E6 /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6C2E2B7FAC8000B056E6 /* Factories.swift */; };
 		9CAA6C312B7FAE3F00B056E6 /* ArtworksArtistRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6C302B7FAE3F00B056E6 /* ArtworksArtistRepositoryImpl.swift */; };
 		9CAA6C372B80035900B056E6 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6C362B80035900B056E6 /* Strings.swift */; };
-		9CAA6C3A2B80138F00B056E6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9CAA6C392B80138F00B056E6 /* Kingfisher */; };
-		9CAA6C3D2B8020E100B056E6 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 9CAA6C3C2B8020E100B056E6 /* SDWebImage */; };
 		9CAA6C402B80F46700B056E6 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9CAA6C3F2B80F46700B056E6 /* SDWebImageSwiftUI */; };
+		9CAA6C762B8295A900B056E6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6C752B8295A900B056E6 /* Extensions.swift */; };
 		9CFA8A172B7EABE6007C78DA /* ArtworksAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFA8A162B7EABE6007C78DA /* ArtworksAppApp.swift */; };
 		9CFA8A192B7EABE6007C78DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFA8A182B7EABE6007C78DA /* ContentView.swift */; };
 		9CFA8A1B2B7EABE8007C78DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CFA8A1A2B7EABE8007C78DA /* Assets.xcassets */; };
@@ -54,7 +53,6 @@
 		9CFA8A522B7EAC0D007C78DA /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CFA8A3C2B7EAC0C007C78DA /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9CFA8A5A2B7EAC14007C78DA /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CFA8A292B7EABFF007C78DA /* Domain.framework */; };
 		9CFA8A5B2B7EAC14007C78DA /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CFA8A292B7EABFF007C78DA /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9CFA8A632B7EAC7E007C78DA /* ArtworksModelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFA8A622B7EAC7E007C78DA /* ArtworksModelResponse.swift */; };
 		9CFA8A682B7EAD03007C78DA /* ArtworksModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFA8A672B7EAD03007C78DA /* ArtworksModelData.swift */; };
 /* End PBXBuildFile section */
 
@@ -188,6 +186,7 @@
 		9CAA6C2E2B7FAC8000B056E6 /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
 		9CAA6C302B7FAE3F00B056E6 /* ArtworksArtistRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworksArtistRepositoryImpl.swift; sourceTree = "<group>"; };
 		9CAA6C362B80035900B056E6 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		9CAA6C752B8295A900B056E6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9CFA8A132B7EABE6007C78DA /* ArtworksApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtworksApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CFA8A162B7EABE6007C78DA /* ArtworksAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworksAppApp.swift; sourceTree = "<group>"; };
 		9CFA8A182B7EABE6007C78DA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -201,7 +200,6 @@
 		9CFA8A3F2B7EAC0C007C78DA /* Data.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Data.docc; sourceTree = "<group>"; };
 		9CFA8A452B7EAC0C007C78DA /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CFA8A4C2B7EAC0D007C78DA /* DataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTests.swift; sourceTree = "<group>"; };
-		9CFA8A622B7EAC7E007C78DA /* ArtworksModelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworksModelResponse.swift; sourceTree = "<group>"; };
 		9CFA8A672B7EAD03007C78DA /* ArtworksModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworksModelData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -211,8 +209,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CAA6C402B80F46700B056E6 /* SDWebImageSwiftUI in Frameworks */,
-				9CAA6C3D2B8020E100B056E6 /* SDWebImage in Frameworks */,
-				9CAA6C3A2B80138F00B056E6 /* Kingfisher in Frameworks */,
 				9CAA6C172B7EC8E200B056E6 /* Domain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,6 +395,7 @@
 				9C11924F2B7EC503001B6CD4 /* PresentationError.swift */,
 				9CAA6C2E2B7FAC8000B056E6 /* Factories.swift */,
 				9CAA6C362B80035900B056E6 /* Strings.swift */,
+				9CAA6C752B8295A900B056E6 /* Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -525,25 +522,8 @@
 		9CFA8A5F2B7EAC42007C78DA /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				9CFA8A602B7EAC4C007C78DA /* DataMapping */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		9CFA8A602B7EAC4C007C78DA /* DataMapping */ = {
-			isa = PBXGroup;
-			children = (
-				9CFA8A612B7EAC5C007C78DA /* Responses */,
-			);
-			path = DataMapping;
-			sourceTree = "<group>";
-		};
-		9CFA8A612B7EAC5C007C78DA /* Responses */ = {
-			isa = PBXGroup;
-			children = (
-				9CFA8A622B7EAC7E007C78DA /* ArtworksModelResponse.swift */,
-			);
-			path = Responses;
 			sourceTree = "<group>";
 		};
 		9CFA8A662B7EACFC007C78DA /* Entities */ = {
@@ -602,8 +582,6 @@
 			);
 			name = Presentation;
 			packageProductDependencies = (
-				9CAA6C392B80138F00B056E6 /* Kingfisher */,
-				9CAA6C3C2B8020E100B056E6 /* SDWebImage */,
 				9CAA6C3F2B80F46700B056E6 /* SDWebImageSwiftUI */,
 			);
 			productName = Presentation;
@@ -749,8 +727,6 @@
 			);
 			mainGroup = 9CFA8A0A2B7EABE6007C78DA;
 			packageReferences = (
-				9CAA6C382B80135E00B056E6 /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				9CAA6C3B2B8020E100B056E6 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				9CAA6C3E2B80F46700B056E6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 9CFA8A142B7EABE6007C78DA /* Products */;
@@ -828,6 +804,7 @@
 				9CAA6C162B7EC5C900B056E6 /* ArtworksListView.swift in Sources */,
 				9C11924C2B7EC485001B6CD4 /* ArtworksListViewModelImpl.swift in Sources */,
 				9CAA6C202B7FA56300B056E6 /* ArtworksDetailViewModel.swift in Sources */,
+				9CAA6C762B8295A900B056E6 /* Extensions.swift in Sources */,
 				9C11924A2B7EC43E001B6CD4 /* ArtworksListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -874,7 +851,6 @@
 				9CFA8A402B7EAC0C007C78DA /* Data.docc in Sources */,
 				9CAA6C312B7FAE3F00B056E6 /* ArtworksArtistRepositoryImpl.swift in Sources */,
 				9C1192172B7EBEB1001B6CD4 /* ArtworksRepositoryImpl.swift in Sources */,
-				9CFA8A632B7EAC7E007C78DA /* ArtworksModelResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1455,22 +1431,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9CAA6C382B80135E00B056E6 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.11.0;
-			};
-		};
-		9CAA6C3B2B8020E100B056E6 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.18.11;
-			};
-		};
 		9CAA6C3E2B80F46700B056E6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
@@ -1482,16 +1442,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9CAA6C392B80138F00B056E6 /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9CAA6C382B80135E00B056E6 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
-		9CAA6C3C2B8020E100B056E6 /* SDWebImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9CAA6C3B2B8020E100B056E6 /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImage;
-		};
 		9CAA6C3F2B80F46700B056E6 /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9CAA6C3E2B80F46700B056E6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
