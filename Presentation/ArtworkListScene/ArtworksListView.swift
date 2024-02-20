@@ -10,11 +10,13 @@ private enum ArtworkListViewMargins {
     static let cardHeight: CGFloat = 140
     static let webImageSize: CGFloat = 80
     static let subtitlePrefix: Int = 120
+    static let titlePrefix: Int = 40
     static let opacity: CGFloat = 0.5
 }
 
 public struct ArtworksListView<VM: ArtworksListViewModel>: View {
     @ObservedObject public var viewModel: VM
+    @StateObject private var networkMonitor = NetworkMonitor()
     @State private var showingAlert = false
     @State private var alertMessage = ""
     @State private var scrollToArtworks: Int?
@@ -45,17 +47,10 @@ public struct ArtworksListView<VM: ArtworksListViewModel>: View {
                                         .aspectRatio(contentMode: .fit)
                                         .frame(width: Margins.webImageSize, height: Margins.webImageSize)
                                         .onAppear {
-                                            let cacheKey = SDWebImageManager.shared.cacheKey(for: URL(string: artworks.thumbnail.image))
-                                            SDWebImageManager.shared.imageCache.store?(
-                                                nil,
-                                                imageData: nil,
-                                                forKey: cacheKey,
-                                                context: nil,
-                                                cacheType: .disk
-                                            )
+                                            Helpers.cacheImage(with: artworks.thumbnail.image)
                                         }
                                     VStack(alignment: .leading) {
-                                        Text(artworks.title)
+                                        Text(artworks.title.prefix(Margins.titlePrefix)+"...")
                                             .fontWeight(.bold)
                                             .foregroundColor(.gray)
                                         Text(artworks.thumbnail.subtitle.prefix(Margins.subtitlePrefix)+"...")
@@ -65,29 +60,29 @@ public struct ArtworksListView<VM: ArtworksListViewModel>: View {
                                             .multilineTextAlignment(.leading)
                                     }
                                 }.padding(.horizontal, Margins.padding)
-                                
                             }.id(UUID())
                                 .ignoresSafeArea()
                         }
                     }.scrollTargetLayout()
-                             Button {
-                                 loadNextPage()
-                             } label: {
-                                 HStack {
-                                     Image(systemName: Strings.load_more_image)
-                                     Text(Strings.load_more_button)
-                                 }
-                             }.buttonBorderShape(.roundedRectangle)
-                                 .padding()
-                                 .tint(.black).opacity(Margins.opacity)
-                                 .cornerRadius(Margins.cornerRadius)
-                                 .buttonStyle(.bordered)
+                    Button {
+                        loadNextPage()
+                    } label: {
+                        HStack {
+                            Image(systemName: Strings.load_more_image)
+                            Text(Strings.load_more_button)
+                        }
+                    }.buttonBorderShape(.roundedRectangle)
+                        .padding()
+                        .tint(.black).opacity(Margins.opacity)
+                        .cornerRadius(Margins.cornerRadius)
+                        .buttonStyle(.bordered)
+                    
                 }.scrollTargetBehavior(.paging)
                     .onAppear {
-                        guard let lastArtworksList = viewModel.artworksList.last else { return }
-                        scrollToArtworks = lastArtworksList.id
-                        if let scrollToArtworks = scrollToArtworks {
-                            withAnimation(.linear(duration: 1)) {
+                        withAnimation(.smooth) {
+                            guard let lastArtworksList = viewModel.artworksList.last else { return }
+                            scrollToArtworks = lastArtworksList.id
+                            if let scrollToArtworks = scrollToArtworks {
                                 proxy.scrollTo(scrollToArtworks, anchor: .bottom)
                             }
                         }
@@ -96,10 +91,18 @@ public struct ArtworksListView<VM: ArtworksListViewModel>: View {
         }.id(UUID())
             .navigationTitle(Strings.artworks_list_screen_title)
             .refreshable {
-                await displayNextPage()
+                if networkMonitor.isConnected {
+                    await displayData()
+                } else {
+                    displayNoConnectionAlert()
+                }
             }
             .task {
-                await displayData()
+                if networkMonitor.isConnected {
+                    await displayData()
+                } else {
+                    displayNoConnectionAlert()
+                }
             }
             .alert(isPresented: $showingAlert) {
                 AlertFactory.make(title: alertMessage)
@@ -107,19 +110,29 @@ public struct ArtworksListView<VM: ArtworksListViewModel>: View {
     }
     
     private func loadNextPage() {
-        Task {
-            await displayNextPage()
-        }
+        if networkMonitor.isConnected {
+            Task {
+                await displayNextPage()
+            }
+        } else {
+                displayNoConnectionAlert()
+            }
+        
     }
 }
 
 extension ArtworksListView: ArtworksListViewModelDisplayLogic {
+    public func displayNoConnectionAlert() {
+        alertMessage = Strings.error_noConnectivity_title
+        showingAlert = true
+    }
+    
     public func displayData() async {
         do {
             try await viewModel.prepareData()
+            displayAlert()
         } catch {
             showingAlert = true
-            print(error)
         }
     }
     

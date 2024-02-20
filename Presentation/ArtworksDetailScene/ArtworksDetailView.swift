@@ -37,14 +37,7 @@ public struct ArtworksDetailView<VM: ArtworksDetailViewModel>: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(height: Margins.webImageSize, alignment: .center)
                         .onAppear {
-                            let cacheKey = SDWebImageManager.shared.cacheKey(for: URL(string: artworks.thumbnail.image))
-                            SDWebImageManager.shared.imageCache.store?(
-                                nil,
-                                imageData: nil,
-                                forKey: cacheKey,
-                                context: nil,
-                                cacheType: .disk
-                            )
+                            Helpers.cacheImage(with: artworks.thumbnail.image)
                         }
                 }
         }.id(UUID())

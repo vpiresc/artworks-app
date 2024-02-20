@@ -32,5 +32,5 @@ extension ArtworksDetailViewModelImpl: ArtworksDetailViewModel {
     
     public func showAlertMessage() -> String { return alertMessage }
     
-    public func shouldShowAlert() -> Bool { showAlert }
+    public func shouldShowAlert() -> Bool { showAlert }    
 }
