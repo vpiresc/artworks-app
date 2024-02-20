@@ -16,7 +16,6 @@ private enum ArtworkListViewMargins {
 
 public struct ArtworksListView<VM: ArtworksListViewModel>: View {
     @ObservedObject public var viewModel: VM
-    @StateObject private var networkMonitor = NetworkMonitor()
     @State private var showingAlert = false
     @State private var alertMessage = ""
     @State private var scrollToArtworks: Int?
@@ -91,18 +90,10 @@ public struct ArtworksListView<VM: ArtworksListViewModel>: View {
         }.id(UUID())
             .navigationTitle(Strings.artworks_list_screen_title)
             .refreshable {
-                if networkMonitor.isConnected {
-                    await displayData()
-                } else {
-                    displayNoConnectionAlert()
-                }
+                await displayData()
             }
             .task {
-                if networkMonitor.isConnected {
-                    await displayData()
-                } else {
-                    displayNoConnectionAlert()
-                }
+                await displayData()
             }
             .alert(isPresented: $showingAlert) {
                 AlertFactory.make(title: alertMessage)
@@ -110,14 +101,9 @@ public struct ArtworksListView<VM: ArtworksListViewModel>: View {
     }
     
     private func loadNextPage() {
-        if networkMonitor.isConnected {
-            Task {
-                await displayNextPage()
-            }
-        } else {
-                displayNoConnectionAlert()
-            }
-        
+        Task {
+            await displayNextPage()
+        }
     }
 }
 

@@ -12,7 +12,7 @@ public final class GetArtworksUseCaseImpl: GetArtworksUseCase {
             let result = try await repository.fetchArtworksModel(url)
             return result
         } catch {
-            throw(NetworkError.unableToFetch)
+            throw(error)
         }
     }
 }

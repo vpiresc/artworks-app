@@ -2,14 +2,20 @@ import Domain
 
 public final class ArtworksRepositoryImpl {
     let session: URLSession
+    let networkMonitor: NetworkMonitor
     
-    public init(session: URLSession = .shared) {
+    public init(session: URLSession = .shared, networkMonitor: NetworkMonitor = .init()) {
         self.session = session
+        self.networkMonitor = networkMonitor
     }
 }
 
 extension ArtworksRepositoryImpl: ArtworksRepository {
     public func fetchArtworksModel(_ url: String) async throws -> ArtworksModelData {
+        if !networkMonitor.isConnected {
+            throw NetworkError.noConnectivity
+        }
+        
         guard let url = URL(string: url) else {
             throw NetworkError.invalidUrl
         }

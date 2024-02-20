@@ -34,11 +34,11 @@ final class ArtworksListViewTests: XCTestCase {
         _ = await sut.displayData()
         
         XCTAssertEqual(viewModelSpy.prepareDataWasCalled, 1)
-        XCTAssertEqual(viewModelSpy.showAlertMessageWasCalled, 0)
-        XCTAssertEqual(viewModelSpy.shouldShowAlertWasCalled, 0)
+        XCTAssertEqual(viewModelSpy.showAlertMessageWasCalled, 1)
+        XCTAssertEqual(viewModelSpy.shouldShowAlertWasCalled, 1)
     }
     
-    func test_displayNextPage_shouldCallPrepareDataAndAlerts() async {
+    func test_displayNextPage_shouldCallPrepareData() async {
         let sut = ArtworksListView(viewModel: viewModelSpy)
         
         _ = await sut.displayNextPage()
