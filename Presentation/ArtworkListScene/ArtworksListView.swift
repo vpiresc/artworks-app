@@ -16,8 +16,9 @@ private enum ArtworkListViewMargins {
 public struct ArtworksListView<VM: ArtworksListViewModel>: View {
     @ObservedObject public var viewModel: VM
     @State private var showingAlert = false
-    private typealias Margins = ArtworkListViewMargins
     @State private var alertMessage = ""
+    @State private var scrollToArtworks: Int?
+    private typealias Margins = ArtworkListViewMargins
     
     public init(viewModel: VM) {
         self.viewModel = viewModel
@@ -25,10 +26,9 @@ public struct ArtworksListView<VM: ArtworksListViewModel>: View {
     
     public var body: some View {
         NavigationView {
-//            ScrollViewReader { proxy in
+            ScrollViewReader { proxy in
                 ScrollView {
                     VStack(spacing: Margins.vStackSpacing) {
-                        
                         ForEach(viewModel.artworksList, id: \.id) { artworks in
                             ZStack(alignment: .leading) {
                                 RoundedRectangle(cornerRadius: Margins.cornerRadius)
@@ -69,26 +69,31 @@ public struct ArtworksListView<VM: ArtworksListViewModel>: View {
                             }.id(UUID())
                                 .ignoresSafeArea()
                         }
-                    }
-                    Button {
-                        loadNextPage()
-//                        proxy.scrollTo(viewModel.artworksList.last?.uuid, anchor: .bottom)
-                    } label: {
-                        HStack {
-                            Image(systemName: Strings.load_more_image)
-                            Text(Strings.load_more_button)
+                    }.scrollTargetLayout()
+                             Button {
+                                 loadNextPage()
+                             } label: {
+                                 HStack {
+                                     Image(systemName: Strings.load_more_image)
+                                     Text(Strings.load_more_button)
+                                 }
+                             }.buttonBorderShape(.roundedRectangle)
+                                 .padding()
+                                 .tint(.black).opacity(Margins.opacity)
+                                 .cornerRadius(Margins.cornerRadius)
+                                 .buttonStyle(.bordered)
+                }.scrollTargetBehavior(.paging)
+                    .onAppear {
+                        guard let lastArtworksList = viewModel.artworksList.last else { return }
+                        scrollToArtworks = lastArtworksList.id
+                        if let scrollToArtworks = scrollToArtworks {
+                            withAnimation(.linear(duration: 1)) {
+                                proxy.scrollTo(scrollToArtworks, anchor: .bottom)
+                            }
                         }
-                    }.buttonBorderShape(.roundedRectangle)
-                        .padding()
-                        .tint(.black).opacity(Margins.opacity)
-                        .cornerRadius(Margins.cornerRadius)
-                        .buttonStyle(.bordered)
-                }
-                
-            }
-            .padding()
-//        }.scrollTargetLayout()
-            .id(UUID())
+                    }
+            }.padding()
+        }.id(UUID())
             .navigationTitle(Strings.artworks_list_screen_title)
             .refreshable {
                 await displayNextPage()

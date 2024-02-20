@@ -1,7 +1,7 @@
 {
   "configurations" : [
     {
-      "id" : "E155A90E-2279-4A36-B085-7990FBC5E4BC",
+      "id" : "7E7D5D8B-E2D4-4F2A-B1D0-3E6CB06D8651",
       "name" : "Test Scheme Action",
       "options" : {
 
@@ -15,8 +15,8 @@
     {
       "target" : {
         "containerPath" : "container:ArtworksApp.xcodeproj",
-        "identifier" : "9CAA6C852B82CD1100B056E6",
-        "name" : "DataTests"
+        "identifier" : "9C1192312B7EC3B4001B6CD4",
+        "name" : "PresentationTests"
       }
     }
   ],

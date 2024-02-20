@@ -1,0 +1,35 @@
+{
+  "configurations" : [
+    {
+      "id" : "8399BCFC-737B-4A87-AB5A-7C613D2D82AB",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:ArtworksApp.xcodeproj",
+      "identifier" : "9CFA8A122B7EABE6007C78DA",
+      "name" : "ArtworksApp"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:ArtworksApp.xcodeproj",
+        "identifier" : "9CAA6C852B82CD1100B056E6",
+        "name" : "DataTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:ArtworksApp.xcodeproj",
+        "identifier" : "9C1192312B7EC3B4001B6CD4",
+        "name" : "PresentationTests"
+      }
+    }
+  ],
+  "version" : 1
+}

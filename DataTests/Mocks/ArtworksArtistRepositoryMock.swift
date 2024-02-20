@@ -1,7 +1,7 @@
 import Foundation
 import Domain
 
-final class ArtworksRepositoryMock: ArtworksRepository {
+final class ArtworksArtistRepositoryMock: ArtworksArtistRepository {
     var jsonResponse: String
     var responseType: ResponseType
     var error: Error = ResponseErrorMock.failedFetching
@@ -11,15 +11,15 @@ final class ArtworksRepositoryMock: ArtworksRepository {
         self.responseType = responseType
     }
     
-    func fetchArtworksModel(_ source: String) async throws -> ArtworksModelData {
+    func fetchArtworksArtistModel(_ source: String) async throws -> ArtworksArtistModelData {
         switch responseType {
         case .success:
             guard let data = jsonResponse.data(using: .utf8) else {
                 throw error
             }
             do {
-                let artworksModel = try JSONDecoder().decode(ArtworksModelData.self, from: data)
-                return artworksModel
+                let artworksArtistModel = try JSONDecoder().decode(ArtworksArtistModelData.self, from: data)
+                return artworksArtistModel
             } catch {
                 throw error
             }

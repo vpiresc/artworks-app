@@ -20,7 +20,7 @@ public struct ArtworksDetailView<VM: ArtworksDetailViewModel>: View {
     public var body: some View {
         ScrollView {
             VStack() {
-                let artistDescription = viewModel.artworksArtist?.description ?? ""
+
                 let artworks = viewModel.artworks
                 Text(artworks.title).fontWeight(.bold)
                     .multilineTextAlignment(.leading)
@@ -46,7 +46,6 @@ public struct ArtworksDetailView<VM: ArtworksDetailViewModel>: View {
                                 cacheType: .disk
                             )
                         }
-                Text(artistDescription)
                 }
         }.id(UUID())
             .navigationTitle(Strings.artworks_detail_screen_title)

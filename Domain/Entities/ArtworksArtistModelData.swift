@@ -9,12 +9,9 @@ public struct ArtworksArtistModelData: Decodable {
 public struct ArtworksArtist: Decodable {
     public let id: Int
     public let title: String?
-    public let description: String?
     
-    public init(id: Int, title: String?, description: String?) {
+    public init(id: Int, title: String?) {
         self.id = id
         self.title = title
-        self.description = description
-
     }
 }

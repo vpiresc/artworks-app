@@ -8,7 +8,7 @@ public struct ArtworksModelData: Decodable {
     }
 }
 
-public struct Artworks: Identifiable, Decodable {
+public struct Artworks: Identifiable, Decodable, Hashable {
     public var uuid = UUID()
     public let id: Int
     public let artistId: Int?
@@ -21,13 +21,21 @@ public struct Artworks: Identifiable, Decodable {
         case title
         case thumbnail
     }
-    
+
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decode(Int.self, forKey: .id)
         self.artistId = try container.decode(Int?.self, forKey: .artistId)
         self.title = try container.decode(String.self, forKey: .title)
         self.thumbnail = try container.decode(Thumbnail.self, forKey: .thumbnail)
+    }
+    
+    public static func == (lhs: Artworks, rhs: Artworks) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }
 
@@ -60,8 +68,11 @@ public struct Pagination: Decodable {
         case nextPage = "next_url"
     }
     
+    init(nextPage: String) {
+        self.nextPage = nextPage
+    }
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.nextPage = try container.decode(String.self, forKey: .nextPage)
+        self.nextPage = try container.decodeIfPresent(String.self, forKey: .nextPage) ?? ""
     }
 }
