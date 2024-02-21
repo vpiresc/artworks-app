@@ -37,7 +37,6 @@
 		9CAA6C372B80035900B056E6 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6C362B80035900B056E6 /* Strings.swift */; };
 		9CAA6C762B8295A900B056E6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6C752B8295A900B056E6 /* Extensions.swift */; };
 		9CAA6C892B82CD1100B056E6 /* GetArtworksUseCaseImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6C882B82CD1100B056E6 /* GetArtworksUseCaseImplTests.swift */; };
-		9CAA6C912B82CD8200B056E6 /* ArtworksRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6C902B82CD8200B056E6 /* ArtworksRepositoryMock.swift */; };
 		9CAA6C932B82CDFB00B056E6 /* Stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6C922B82CDFB00B056E6 /* Stubs.swift */; };
 		9CAA6C962B8386BD00B056E6 /* GetArtworksArtistUseCaseImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6C952B8386BD00B056E6 /* GetArtworksArtistUseCaseImplTests.swift */; };
 		9CAA6C982B83874800B056E6 /* ArtworksArtistRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6C972B83874800B056E6 /* ArtworksArtistRepositoryMock.swift */; };
@@ -49,7 +48,6 @@
 		9CAA6CA82B83999000B056E6 /* GetArtworksUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6CA72B83999000B056E6 /* GetArtworksUseCaseMock.swift */; };
 		9CAA6CA92B83CF2F00B056E6 /* ResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6C9A2B83877D00B056E6 /* ResponseMock.swift */; };
 		9CAA6CAA2B83CF3300B056E6 /* Stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6C922B82CDFB00B056E6 /* Stubs.swift */; };
-		9CAA6CAB2B83CF7400B056E6 /* ArtworksRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6C902B82CD8200B056E6 /* ArtworksRepositoryMock.swift */; };
 		9CAA6CAE2B83D6B600B056E6 /* ArtworksListViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6CAD2B83D6B600B056E6 /* ArtworksListViewTests.swift */; };
 		9CAA6CB12B83DC4800B056E6 /* ArtworksArtistViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6CB02B83DC4800B056E6 /* ArtworksArtistViewModelSpy.swift */; };
 		9CAA6CB32B83DDBC00B056E6 /* GetArtworksArtistUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6CB22B83DDBC00B056E6 /* GetArtworksArtistUseCaseMock.swift */; };
@@ -57,6 +55,8 @@
 		9CAA6CB62B83E2D600B056E6 /* ArtworksArtistRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6C972B83874800B056E6 /* ArtworksArtistRepositoryMock.swift */; };
 		9CAA6CB82B83E98900B056E6 /* ArtworksDetailViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6CB72B83E98900B056E6 /* ArtworksDetailViewTests.swift */; };
 		9CAA6CD62B85222600B056E6 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6CD52B85222600B056E6 /* NetworkMonitor.swift */; };
+		9CB9A2582B863B4C0033EC54 /* ArtworksRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB9A2572B863B4C0033EC54 /* ArtworksRepositoryMock.swift */; };
+		9CB9A2592B863B6D0033EC54 /* ArtworksRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB9A2572B863B4C0033EC54 /* ArtworksRepositoryMock.swift */; };
 		9CFA8A172B7EABE6007C78DA /* ArtworksAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFA8A162B7EABE6007C78DA /* ArtworksAppApp.swift */; };
 		9CFA8A1B2B7EABE8007C78DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CFA8A1A2B7EABE8007C78DA /* Assets.xcassets */; };
 		9CFA8A1E2B7EABE8007C78DA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CFA8A1D2B7EABE8007C78DA /* Preview Assets.xcassets */; };
@@ -200,7 +200,6 @@
 		9CAA6C7D2B82C88A00B056E6 /* Data.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Data.xctestplan; sourceTree = "<group>"; };
 		9CAA6C862B82CD1100B056E6 /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CAA6C882B82CD1100B056E6 /* GetArtworksUseCaseImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetArtworksUseCaseImplTests.swift; sourceTree = "<group>"; };
-		9CAA6C902B82CD8200B056E6 /* ArtworksRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworksRepositoryMock.swift; sourceTree = SOURCE_ROOT; };
 		9CAA6C922B82CDFB00B056E6 /* Stubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stubs.swift; sourceTree = "<group>"; };
 		9CAA6C952B8386BD00B056E6 /* GetArtworksArtistUseCaseImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetArtworksArtistUseCaseImplTests.swift; sourceTree = "<group>"; };
 		9CAA6C972B83874800B056E6 /* ArtworksArtistRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworksArtistRepositoryMock.swift; sourceTree = "<group>"; };
@@ -218,6 +217,7 @@
 		9CAA6CB42B83E1FD00B056E6 /* ArtworksDetailViewModelImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworksDetailViewModelImplTests.swift; sourceTree = "<group>"; };
 		9CAA6CB72B83E98900B056E6 /* ArtworksDetailViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworksDetailViewTests.swift; sourceTree = "<group>"; };
 		9CAA6CD52B85222600B056E6 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		9CB9A2572B863B4C0033EC54 /* ArtworksRepositoryMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtworksRepositoryMock.swift; sourceTree = "<group>"; };
 		9CFA8A132B7EABE6007C78DA /* ArtworksApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtworksApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CFA8A162B7EABE6007C78DA /* ArtworksAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworksAppApp.swift; sourceTree = "<group>"; };
 		9CFA8A1A2B7EABE8007C78DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -451,7 +451,7 @@
 			isa = PBXGroup;
 			children = (
 				9CAA6C9A2B83877D00B056E6 /* ResponseMock.swift */,
-				9CAA6C902B82CD8200B056E6 /* ArtworksRepositoryMock.swift */,
+				9CB9A2572B863B4C0033EC54 /* ArtworksRepositoryMock.swift */,
 				9CAA6C972B83874800B056E6 /* ArtworksArtistRepositoryMock.swift */,
 				9CAA6C9D2B838B7300B056E6 /* UrlProtocolMock.swift */,
 				9CAA6C922B82CDFB00B056E6 /* Stubs.swift */,
@@ -872,9 +872,9 @@
 			files = (
 				9CAA6CA62B83926800B056E6 /* ArtworksListViewModelSpy.swift in Sources */,
 				9CAA6CB32B83DDBC00B056E6 /* GetArtworksArtistUseCaseMock.swift in Sources */,
+				9CB9A2592B863B6D0033EC54 /* ArtworksRepositoryMock.swift in Sources */,
 				9CAA6CB82B83E98900B056E6 /* ArtworksDetailViewTests.swift in Sources */,
 				9CAA6CA82B83999000B056E6 /* GetArtworksUseCaseMock.swift in Sources */,
-				9CAA6CAB2B83CF7400B056E6 /* ArtworksRepositoryMock.swift in Sources */,
 				9CAA6CA92B83CF2F00B056E6 /* ResponseMock.swift in Sources */,
 				9C11923A2B7EC3B4001B6CD4 /* ArtworksListViewModelImplTests.swift in Sources */,
 				9CAA6CB52B83E1FD00B056E6 /* ArtworksDetailViewModelImplTests.swift in Sources */,
@@ -895,7 +895,7 @@
 				9CAA6CA02B838BB300B056E6 /* ArtworksRepositoryImplTests.swift in Sources */,
 				9CAA6C962B8386BD00B056E6 /* GetArtworksArtistUseCaseImplTests.swift in Sources */,
 				9CAA6C932B82CDFB00B056E6 /* Stubs.swift in Sources */,
-				9CAA6C912B82CD8200B056E6 /* ArtworksRepositoryMock.swift in Sources */,
+				9CB9A2582B863B4C0033EC54 /* ArtworksRepositoryMock.swift in Sources */,
 				9CAA6C9B2B83877D00B056E6 /* ResponseMock.swift in Sources */,
 				9CAA6C892B82CD1100B056E6 /* GetArtworksUseCaseImplTests.swift in Sources */,
 			);
