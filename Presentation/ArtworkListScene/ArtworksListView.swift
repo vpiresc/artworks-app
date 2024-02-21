@@ -77,7 +77,8 @@ public struct ArtworksListView<VM: ArtworksListViewModel>: View {
                         .cornerRadius(Margins.cornerRadius)
                         .buttonStyle(.bordered)
                     
-                }.onAppear {
+                }.scrollTargetLayout()
+                    .onAppear {
                         withAnimation(.smooth) {
                             guard let lastArtworksList = viewModel.artworksList.last else { return }
                             scrollToArtworks = lastArtworksList.id
