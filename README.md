@@ -16,13 +16,13 @@ The Artworks App is a simple application that displays a list of artworks from t
 Each layer has its own set of unit tests. Additionally, all tests can be run using the `Continuous Integration` (CI) layer. The code coverage is approximately 80%.
 
 ## Build Settings
-- Xcode 15.2
-- iOS Deployment Target 17.2
+- Xcode: 15.2
+- iOS Deployment Target: 17.2
 
 ## Installation
 To run the Artworks App locally, follow these steps:
 
-1. Clone the repository to your local machine using `git clone` command.
+1. Clone the repository to your local machine using `git clone`.
 2. Open the project in Xcode.
 3. Select your target device or simulator.
 4. Open Xcode to build and run the app.
