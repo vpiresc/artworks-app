@@ -36,7 +36,6 @@
 		9CAA6C312B7FAE3F00B056E6 /* ArtworksArtistRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6C302B7FAE3F00B056E6 /* ArtworksArtistRepositoryImpl.swift */; };
 		9CAA6C372B80035900B056E6 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6C362B80035900B056E6 /* Strings.swift */; };
 		9CAA6C762B8295A900B056E6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6C752B8295A900B056E6 /* Extensions.swift */; };
-		9CAA6C802B82CB9900B056E6 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9CAA6C7F2B82CB9900B056E6 /* SDWebImageSwiftUI */; };
 		9CAA6C892B82CD1100B056E6 /* GetArtworksUseCaseImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6C882B82CD1100B056E6 /* GetArtworksUseCaseImplTests.swift */; };
 		9CAA6C912B82CD8200B056E6 /* ArtworksRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6C902B82CD8200B056E6 /* ArtworksRepositoryMock.swift */; };
 		9CAA6C932B82CDFB00B056E6 /* Stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6C922B82CDFB00B056E6 /* Stubs.swift */; };
@@ -57,7 +56,6 @@
 		9CAA6CB52B83E1FD00B056E6 /* ArtworksDetailViewModelImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6CB42B83E1FD00B056E6 /* ArtworksDetailViewModelImplTests.swift */; };
 		9CAA6CB62B83E2D600B056E6 /* ArtworksArtistRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6C972B83874800B056E6 /* ArtworksArtistRepositoryMock.swift */; };
 		9CAA6CB82B83E98900B056E6 /* ArtworksDetailViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6CB72B83E98900B056E6 /* ArtworksDetailViewTests.swift */; };
-		9CAA6CD42B84F43D00B056E6 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6CD32B84F43D00B056E6 /* Helpers.swift */; };
 		9CAA6CD62B85222600B056E6 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6CD52B85222600B056E6 /* NetworkMonitor.swift */; };
 		9CFA8A172B7EABE6007C78DA /* ArtworksAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFA8A162B7EABE6007C78DA /* ArtworksAppApp.swift */; };
 		9CFA8A1B2B7EABE8007C78DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CFA8A1A2B7EABE8007C78DA /* Assets.xcassets */; };
@@ -219,7 +217,6 @@
 		9CAA6CB22B83DDBC00B056E6 /* GetArtworksArtistUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetArtworksArtistUseCaseMock.swift; sourceTree = "<group>"; };
 		9CAA6CB42B83E1FD00B056E6 /* ArtworksDetailViewModelImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworksDetailViewModelImplTests.swift; sourceTree = "<group>"; };
 		9CAA6CB72B83E98900B056E6 /* ArtworksDetailViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworksDetailViewTests.swift; sourceTree = "<group>"; };
-		9CAA6CD32B84F43D00B056E6 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		9CAA6CD52B85222600B056E6 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		9CFA8A132B7EABE6007C78DA /* ArtworksApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtworksApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CFA8A162B7EABE6007C78DA /* ArtworksAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworksAppApp.swift; sourceTree = "<group>"; };
@@ -239,7 +236,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CAA6C802B82CB9900B056E6 /* SDWebImageSwiftUI in Frameworks */,
 				9CAA6C172B7EC8E200B056E6 /* Domain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,7 +407,6 @@
 				9CAA6C2E2B7FAC8000B056E6 /* Factories.swift */,
 				9CAA6C362B80035900B056E6 /* Strings.swift */,
 				9CAA6C752B8295A900B056E6 /* Extensions.swift */,
-				9CAA6CD32B84F43D00B056E6 /* Helpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -647,7 +642,6 @@
 			);
 			name = Presentation;
 			packageProductDependencies = (
-				9CAA6C7F2B82CB9900B056E6 /* SDWebImageSwiftUI */,
 			);
 			productName = Presentation;
 			productReference = 9C1192292B7EC3B4001B6CD4 /* Presentation.framework */;
@@ -791,7 +785,6 @@
 			);
 			mainGroup = 9CFA8A0A2B7EABE6007C78DA;
 			packageReferences = (
-				9CAA6C7E2B82CB9900B056E6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 9CFA8A142B7EABE6007C78DA /* Products */;
 			projectDirPath = "";
@@ -866,7 +859,6 @@
 				9CAA6C2C2B7FA95100B056E6 /* ArtworksDetailView.swift in Sources */,
 				9C11922D2B7EC3B4001B6CD4 /* Presentation.docc in Sources */,
 				9CAA6C162B7EC5C900B056E6 /* ArtworksListView.swift in Sources */,
-				9CAA6CD42B84F43D00B056E6 /* Helpers.swift in Sources */,
 				9C11924C2B7EC485001B6CD4 /* ArtworksListViewModelImpl.swift in Sources */,
 				9CAA6C202B7FA56300B056E6 /* ArtworksDetailViewModel.swift in Sources */,
 				9CAA6C762B8295A900B056E6 /* Extensions.swift in Sources */,
@@ -1524,25 +1516,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		9CAA6C7E2B82CB9900B056E6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.2.6;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		9CAA6C7F2B82CB9900B056E6 /* SDWebImageSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9CAA6C7E2B82CB9900B056E6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
-			productName = SDWebImageSwiftUI;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9CFA8A0B2B7EABE6007C78DA /* Project object */;
 }

@@ -1,5 +1,4 @@
 import SwiftUI
-import SDWebImageSwiftUI
 
 private enum ArtworksDetailViewMargins {
     static let webImageSize: CGFloat = 300
@@ -32,13 +31,13 @@ public struct ArtworksDetailView<VM: ArtworksDetailViewModel>: View {
                 Text(artworks.thumbnail?.subtitle ?? "")
                     .multilineTextAlignment(.leading)
                     .padding()
-                WebImage(url: URL(string: artworksImage))
-                        .resizable()
+                AsyncImage(url: URL(string: artworksImage)) { image in
+                    image.resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(height: Margins.webImageSize, alignment: .center)
-                        .onAppear {
-                            Helpers.cacheImage(with: artworksImage)
-                        }
+                        .frame(width: Margins.webImageSize, height: Margins.webImageSize)
+                } placeholder: {
+                    ProgressView()
+                }
                 let description = artworks.description?.removingHTMLTags()
                 Text(description ?? "")
                     .italic()

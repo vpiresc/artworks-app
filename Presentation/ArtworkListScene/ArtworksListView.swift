@@ -1,5 +1,4 @@
 import SwiftUI
-import SDWebImageSwiftUI
 
 private enum ArtworkListViewMargins {
     static let vStackSpacing: CGFloat = 16
@@ -42,13 +41,15 @@ public struct ArtworksListView<VM: ArtworksListViewModel>: View {
                                     artwork: artworks
                                 )) {
                                     let artworksImage = artworks.thumbnail?.image ?? ""
-                                    WebImage(url: URL(string: artworksImage))
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .frame(width: Margins.webImageSize, height: Margins.webImageSize)
-                                        .onAppear {
-                                            Helpers.cacheImage(with: artworksImage)
-                                        }
+                                    
+                                    AsyncImage(url: URL(string: artworksImage)) { image in
+                                        image.resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: Margins.webImageSize, height: Margins.webImageSize)
+                                    } placeholder: {
+                                        ProgressView()
+                                    }
+
                                     VStack(alignment: .leading) {
                                         Text(artworks.title)
                                             .fontWeight(.semibold)
