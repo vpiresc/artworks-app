@@ -35,7 +35,7 @@ final class GetArtworksArtistUseCaseImplTests: XCTestCase {
         }
     }
 
-func test_fetchArtworksListModel_withSuccessAndInvalidResponse_shouldReturnAnError() async {
+func test_execute_withSuccessAndInvalidResponse_shouldReturnAnError() async {
     repositoryMock.responseType = .success
     repositoryMock.jsonResponse = ""
     
@@ -47,7 +47,7 @@ func test_fetchArtworksListModel_withSuccessAndInvalidResponse_shouldReturnAnErr
     }
 }
     
-    func test_fetchArtworksListModel_withFailureAndInvalidResponse_shouldReturnAnError() async {
+    func test_execute_withFailureAndInvalidResponse_shouldReturnAnError() async {
         repositoryMock.responseType = .failure
         repositoryMock.jsonResponse = ""
         
@@ -59,7 +59,7 @@ func test_fetchArtworksListModel_withSuccessAndInvalidResponse_shouldReturnAnErr
         }
     }
     
-    func test_fetchArtworksListModel_withFailureAndValidResponse_shouldReturnAnError() async {
+    func test_execute_withFailureAndValidResponse_shouldReturnAnError() async {
         repositoryMock.responseType = .failure
         repositoryMock.jsonResponse = Stubs.makefetchArtworksArtistModelStub()
         

@@ -20,25 +20,31 @@ public struct ArtworksDetailView<VM: ArtworksDetailViewModel>: View {
     public var body: some View {
         ScrollView {
             VStack() {
-
                 let artworks = viewModel.artworks
+                let artworksImage = artworks.thumbnail?.image ?? ""
                 Text(artworks.title).fontWeight(.bold)
                     .multilineTextAlignment(.leading)
-                Text(viewModel.artworksArtist?.title ?? "Unknown Artist")
+                Text(viewModel.artworksArtist?.title ?? Strings.artworks_artist_placeholder)
                     .fontWeight(.light)
                     .foregroundColor(.gray)
                     .multilineTextAlignment(.trailing)
 
-                Text(artworks.thumbnail.subtitle)
+                Text(artworks.thumbnail?.subtitle ?? "")
                     .multilineTextAlignment(.leading)
                     .padding()
-                    WebImage(url: URL(string: artworks.thumbnail.image))
+                WebImage(url: URL(string: artworksImage))
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(height: Margins.webImageSize, alignment: .center)
                         .onAppear {
-                            Helpers.cacheImage(with: artworks.thumbnail.image)
+                            Helpers.cacheImage(with: artworksImage)
                         }
+                let description = artworks.description?.removingHTMLTags()
+                Text(description ?? "")
+                    .italic()
+                    .fontWeight(.light)
+                    .multilineTextAlignment(.leading)
+                    .padding()
                 }
         }.id(UUID())
             .navigationTitle(Strings.artworks_detail_screen_title)
@@ -66,4 +72,3 @@ extension ArtworksDetailView: ArtworksDetailViewModelDisplayLogic {
         showingAlert = viewModel.shouldShowAlert()
     }
 }
-

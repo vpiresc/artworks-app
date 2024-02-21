@@ -42,12 +42,13 @@ extension ArtworksListViewModelImpl: ArtworksListViewModel {
         } catch NetworkError.unableToFetch {
             alertMessage = Strings.error_missing_title
             showAlert = true
-        } catch NetworkError.noConnectivity{
+        } catch NetworkError.noConnectivity {
             alertMessage = Strings.error_noConnectivity_title
             showAlert = true
         } catch {
             alertMessage = Strings.error_generic_title
             showAlert = true
+            print(error)
         }
     }
     

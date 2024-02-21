@@ -6,7 +6,6 @@ public protocol ArtworksListViewModelDisplayLogic {
     func displayData() async
     func displayNextPage() async
     func displayAlert()
-    func displayNoConnectionAlert()
 }
 
 public protocol ArtworksListViewModelInputLogic {

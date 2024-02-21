@@ -12,7 +12,7 @@ public final class ArtworksRepositoryImpl {
 
 extension ArtworksRepositoryImpl: ArtworksRepository {
     public func fetchArtworksModel(_ url: String) async throws -> ArtworksModelData {
-        if !networkMonitor.isConnected {
+        if !checkInternetConnection() {
             throw NetworkError.noConnectivity
         }
         
@@ -41,5 +41,9 @@ extension ArtworksRepositoryImpl: ArtworksRepository {
         let artworksModelData = try JSONDecoder().decode(ArtworksModelData.self, from: data)
         
         return artworksModelData
+    }
+    
+    public func checkInternetConnection() -> Bool {
+        networkMonitor.isConnected
     }
 }

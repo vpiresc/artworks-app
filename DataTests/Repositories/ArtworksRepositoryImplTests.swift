@@ -36,7 +36,7 @@ final class ArtworksRepositoryImplTests: XCTestCase {
             let artworksModelResponse = try await sut.fetchArtworksModel(Stubs.makeUrl().absoluteString)
                 XCTAssertNotNil(artworksModelResponse)
         } catch {
-            fatalError("fetchScreenModel should not return any error")
+            fatalError("fetchArtworksModel should not return any error")
         }
     }
     
@@ -49,7 +49,7 @@ final class ArtworksRepositoryImplTests: XCTestCase {
         
         do {
             _ = try await sut.fetchArtworksModel(Stubs.makeUrl().absoluteString)
-            fatalError("fetchScreenModel should not return any response")
+            fatalError("fetchArtworksModel should not return any response")
         } catch {
             XCTAssertNotNil(error)
         }
@@ -64,7 +64,7 @@ final class ArtworksRepositoryImplTests: XCTestCase {
         
         do {
             _ = try await sut.fetchArtworksModel(Stubs.makeUrl().absoluteString)
-            fatalError("fetchScreenModel should not return any response")
+            fatalError("fetchArtworksModel should not return any response")
         } catch {
             XCTAssertEqual(error.localizedDescription, NetworkError.badRequest.localizedDescription)
         }
@@ -79,7 +79,7 @@ final class ArtworksRepositoryImplTests: XCTestCase {
         
         do {
             _ = try await sut.fetchArtworksModel(Stubs.makeUrl().absoluteString)
-            fatalError("fetchScreenModel should not return any response")
+            fatalError("fetchArtworksModel should not return any response")
         } catch {
             XCTAssertEqual(error.localizedDescription, NetworkError.unauthorized.localizedDescription)
         }
@@ -94,7 +94,7 @@ final class ArtworksRepositoryImplTests: XCTestCase {
         
         do {
             _ = try await sut.fetchArtworksModel(Stubs.makeUrl().absoluteString)
-            fatalError("fetchScreenModel should not return any response")
+            fatalError("fetchArtworksModel should not return any response")
         } catch {
             XCTAssertEqual(error.localizedDescription, NetworkError.forbidden.localizedDescription)
         }
@@ -109,7 +109,7 @@ final class ArtworksRepositoryImplTests: XCTestCase {
         
         do {
             _ = try await sut.fetchArtworksModel(Stubs.makeUrl().absoluteString)
-            fatalError("fetchScreenModel should not return any response")
+            fatalError("fetchArtworksModel should not return any response")
         } catch {
             XCTAssertEqual(error.localizedDescription, NetworkError.serverError.localizedDescription)
         }
@@ -124,7 +124,7 @@ final class ArtworksRepositoryImplTests: XCTestCase {
         
         do {
             _ = try await sut.fetchArtworksModel(Stubs.makeUrl().absoluteString)
-            fatalError("fetchScreenModel should not return any response")
+            fatalError("fetchArtworksModel should not return any response")
         } catch {
             XCTAssertEqual(error.localizedDescription, NetworkError.invalidServerResponse.localizedDescription)
         }
@@ -139,7 +139,7 @@ final class ArtworksRepositoryImplTests: XCTestCase {
         
         do {
             _ = try await sut.fetchArtworksModel("")
-            fatalError("fetchScreenModel should not return any response")
+            fatalError("fetchArtworksModel should not return any response")
         } catch {
             XCTAssertEqual(error.localizedDescription, NetworkError.invalidUrl.localizedDescription)
         }
@@ -154,7 +154,7 @@ final class ArtworksRepositoryImplTests: XCTestCase {
         
         do {
             _ = try await sut.fetchArtworksModel(Stubs.makeUrl().absoluteString)
-            fatalError("fetchScreenModel should not return any response")
+            fatalError("fetchArtworksModel should not return any response")
         } catch {
             XCTAssertEqual(error.localizedDescription, Stubs.makeError().localizedDescription)
         }

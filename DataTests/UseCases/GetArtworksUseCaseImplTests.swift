@@ -24,7 +24,7 @@ final class GetArtworksUseCaseImplTests: XCTestCase {
     
     // MARK: Tests
     
-    func test_fetchArtworksListModel_withSuccessAndValidResponse_shouldReturnArtworksModel() async {
+    func test_execute_withSuccessAndValidResponse_shouldReturnArtworksModel() async {
         repositoryMock.responseType = .success
         repositoryMock.jsonResponse = Stubs.makefetchArtworksModelStub()
         
@@ -37,7 +37,7 @@ final class GetArtworksUseCaseImplTests: XCTestCase {
         }
     }
 
-func test_fetchArtworksListModel_withSuccessAndInvalidResponse_shouldReturnAnError() async {
+func test_execute_withSuccessAndInvalidResponse_shouldReturnAnError() async {
     repositoryMock.responseType = .success
     repositoryMock.jsonResponse = ""
     
@@ -49,7 +49,7 @@ func test_fetchArtworksListModel_withSuccessAndInvalidResponse_shouldReturnAnErr
     }
 }
     
-    func test_fetchArtworksListModel_withFailureAndInvalidResponse_shouldReturnAnError() async {
+    func test_execute_withFailureAndInvalidResponse_shouldReturnAnError() async {
         repositoryMock.responseType = .failure
         repositoryMock.jsonResponse = ""
         
@@ -61,7 +61,7 @@ func test_fetchArtworksListModel_withSuccessAndInvalidResponse_shouldReturnAnErr
         }
     }
     
-    func test_fetchArtworksListModel_withFailureAndValidResponse_shouldReturnAnError() async {
+    func test_execute_withFailureAndValidResponse_shouldReturnAnError() async {
         repositoryMock.responseType = .failure
         repositoryMock.jsonResponse = Stubs.makefetchArtworksModelStub()
         
@@ -70,6 +70,30 @@ func test_fetchArtworksListModel_withSuccessAndInvalidResponse_shouldReturnAnErr
             XCTFail("execute should not return any response")
         } catch {
             XCTAssertNotNil(error)
+        }
+    }
+    
+    func test_execute_withNoConnectivityFalse_shouldNotHaveCheckInternetConnection() async {
+        repositoryMock.responseType = .success
+        repositoryMock.jsonResponse = Stubs.makefetchArtworksModelStub()
+        repositoryMock.isConnected = false
+        do {
+            _ = try await sut.execute(with: "")
+            XCTAssertFalse(repositoryMock.checkInternetConnection())
+        } catch {
+            fatalError("execute should not return any error")
+        }
+    }
+    
+    func test_execute_withNoConnectivityTrue_shouldHaveCheckInternetConnection() async {
+        repositoryMock.responseType = .success
+        repositoryMock.jsonResponse = Stubs.makefetchArtworksModelStub()
+        repositoryMock.isConnected = true
+        do {
+            _ = try await sut.execute(with: "")
+            XCTAssertTrue(repositoryMock.checkInternetConnection())
+        } catch {
+            fatalError("execute should not return any error")
         }
     }
 }

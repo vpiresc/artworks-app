@@ -60,7 +60,6 @@
 		9CAA6CD42B84F43D00B056E6 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6CD32B84F43D00B056E6 /* Helpers.swift */; };
 		9CAA6CD62B85222600B056E6 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA6CD52B85222600B056E6 /* NetworkMonitor.swift */; };
 		9CFA8A172B7EABE6007C78DA /* ArtworksAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFA8A162B7EABE6007C78DA /* ArtworksAppApp.swift */; };
-		9CFA8A192B7EABE6007C78DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFA8A182B7EABE6007C78DA /* ContentView.swift */; };
 		9CFA8A1B2B7EABE8007C78DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CFA8A1A2B7EABE8007C78DA /* Assets.xcassets */; };
 		9CFA8A1E2B7EABE8007C78DA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CFA8A1D2B7EABE8007C78DA /* Preview Assets.xcassets */; };
 		9CFA8A2D2B7EABFF007C78DA /* Domain.docc in Sources */ = {isa = PBXBuildFile; fileRef = 9CFA8A2C2B7EABFF007C78DA /* Domain.docc */; };
@@ -224,7 +223,6 @@
 		9CAA6CD52B85222600B056E6 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		9CFA8A132B7EABE6007C78DA /* ArtworksApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtworksApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CFA8A162B7EABE6007C78DA /* ArtworksAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworksAppApp.swift; sourceTree = "<group>"; };
-		9CFA8A182B7EABE6007C78DA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9CFA8A1A2B7EABE8007C78DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9CFA8A1D2B7EABE8007C78DA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9CFA8A292B7EABFF007C78DA /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -357,7 +355,6 @@
 				9C11924D2B7EC4F2001B6CD4 /* Common */,
 				9C1192462B7EC402001B6CD4 /* ArtworkListScene */,
 				9CAA6C1C2B7FA46200B056E6 /* ArtworksDetailScene */,
-				9CAA6C2D2B7FAC7300B056E6 /* Factories */,
 				9C11922B2B7EC3B4001B6CD4 /* Presentation.h */,
 				9C11922C2B7EC3B4001B6CD4 /* Presentation.docc */,
 			);
@@ -443,13 +440,6 @@
 				9CAA6C1F2B7FA56300B056E6 /* ArtworksDetailViewModel.swift */,
 			);
 			path = Interfaces;
-			sourceTree = "<group>";
-		};
-		9CAA6C2D2B7FAC7300B056E6 /* Factories */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Factories;
 			sourceTree = "<group>";
 		};
 		9CAA6C872B82CD1100B056E6 /* DataTests */ = {
@@ -548,7 +538,6 @@
 			isa = PBXGroup;
 			children = (
 				9CFA8A162B7EABE6007C78DA /* ArtworksAppApp.swift */,
-				9CFA8A182B7EABE6007C78DA /* ContentView.swift */,
 				9CFA8A1A2B7EABE8007C78DA /* Assets.xcassets */,
 				9CFA8A1C2B7EABE8007C78DA /* Preview Content */,
 			);
@@ -924,7 +913,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CFA8A192B7EABE6007C78DA /* ContentView.swift in Sources */,
 				9CFA8A172B7EABE6007C78DA /* ArtworksAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

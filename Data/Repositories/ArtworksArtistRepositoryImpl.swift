@@ -2,14 +2,20 @@ import Domain
 
 public final class ArtworksArtistRepositoryImpl {
     let session: URLSession
+    let networkMonitor: NetworkMonitor
     
-    public init(session: URLSession = .shared) {
+    public init(session: URLSession = .shared, networkMonitor: NetworkMonitor = .init()) {
         self.session = session
+        self.networkMonitor = networkMonitor
     }
 }
 
-extension ArtworksArtistRepositoryImpl: ArtworksArtistRepository {    
+extension ArtworksArtistRepositoryImpl: ArtworksArtistRepository {
     public func fetchArtworksArtistModel(_ url: String) async throws -> ArtworksArtistModelData {
+        if !checkInternetConnection() {
+            throw NetworkError.noConnectivity
+        }
+        
         guard let url = URL(string: url) else {
             throw NetworkError.invalidUrl
         }
@@ -35,5 +41,9 @@ extension ArtworksArtistRepositoryImpl: ArtworksArtistRepository {
         let artworksArtistModelData = try JSONDecoder().decode(ArtworksArtistModelData.self, from: data)
         
         return artworksArtistModelData
+    }
+    
+    public func checkInternetConnection() -> Bool {
+        networkMonitor.isConnected
     }
 }

@@ -11,7 +11,7 @@ public final class GetArtworksArtistUseCaseImpl: GetArtworksArtistUseCase {
         do {
             return try await repository.fetchArtworksArtistModel(Constants.Urls.artworksDetail(artistId: artistId))
         } catch {
-            throw(NetworkError.unableToFetch)
+            throw(error)
         }
     }
 }

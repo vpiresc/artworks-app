@@ -5,6 +5,7 @@ final class ArtworksRepositoryMock: ArtworksRepository {
     var jsonResponse: String
     var responseType: ResponseType
     var error: Error = ResponseErrorMock.failedFetching
+    var isConnected = false
     
     init(jsonResponse: String = "", responseType: ResponseType = .success) {
         self.jsonResponse = jsonResponse
@@ -27,5 +28,9 @@ final class ArtworksRepositoryMock: ArtworksRepository {
             throw error
             
         }
+    }
+    
+    func checkInternetConnection() -> Bool {
+        return isConnected
     }
 }

@@ -41,18 +41,19 @@ public struct ArtworksListView<VM: ArtworksListViewModel>: View {
                                     artistId: artworks.artistId ?? 0,
                                     artwork: artworks
                                 )) {
-                                    WebImage(url: URL(string: artworks.thumbnail.image))
+                                    let artworksImage = artworks.thumbnail?.image ?? ""
+                                    WebImage(url: URL(string: artworksImage))
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                         .frame(width: Margins.webImageSize, height: Margins.webImageSize)
                                         .onAppear {
-                                            Helpers.cacheImage(with: artworks.thumbnail.image)
+                                            Helpers.cacheImage(with: artworksImage)
                                         }
                                     VStack(alignment: .leading) {
-                                        Text(artworks.title.prefix(Margins.titlePrefix)+"...")
-                                            .fontWeight(.bold)
+                                        Text(artworks.title)
+                                            .fontWeight(.semibold)
                                             .foregroundColor(.gray)
-                                        Text(artworks.thumbnail.subtitle.prefix(Margins.subtitlePrefix)+"...")
+                                        Text((artworks.thumbnail?.subtitle.prefix(Margins.subtitlePrefix) ?? "")+"...")
                                             .fontWeight(.light)
                                             .font(.caption)
                                             .foregroundColor(.gray)
@@ -62,7 +63,7 @@ public struct ArtworksListView<VM: ArtworksListViewModel>: View {
                             }.id(UUID())
                                 .ignoresSafeArea()
                         }
-                    }.scrollTargetLayout()
+                    }
                     Button {
                         loadNextPage()
                     } label: {
@@ -76,8 +77,7 @@ public struct ArtworksListView<VM: ArtworksListViewModel>: View {
                         .cornerRadius(Margins.cornerRadius)
                         .buttonStyle(.bordered)
                     
-                }.scrollTargetBehavior(.paging)
-                    .onAppear {
+                }.onAppear {
                         withAnimation(.smooth) {
                             guard let lastArtworksList = viewModel.artworksList.last else { return }
                             scrollToArtworks = lastArtworksList.id
@@ -108,11 +108,6 @@ public struct ArtworksListView<VM: ArtworksListViewModel>: View {
 }
 
 extension ArtworksListView: ArtworksListViewModelDisplayLogic {
-    public func displayNoConnectionAlert() {
-        alertMessage = Strings.error_noConnectivity_title
-        showingAlert = true
-    }
-    
     public func displayData() async {
         do {
             try await viewModel.prepareData()

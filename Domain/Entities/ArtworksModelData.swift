@@ -13,12 +13,14 @@ public struct Artworks: Identifiable, Decodable, Hashable {
     public let id: Int
     public let artistId: Int?
     public let title: String
-    public let thumbnail: Thumbnail
+    public let description: String?
+    public let thumbnail: Thumbnail?
     
     public enum CodingKeys: String, CodingKey {
         case id
         case artistId = "artist_id"
         case title
+        case description
         case thumbnail
     }
 
@@ -27,6 +29,7 @@ public struct Artworks: Identifiable, Decodable, Hashable {
         self.id = try container.decode(Int.self, forKey: .id)
         self.artistId = try container.decode(Int?.self, forKey: .artistId)
         self.title = try container.decode(String.self, forKey: .title)
+        self.description = try container.decodeIfPresent(String.self, forKey: .description)
         self.thumbnail = try container.decode(Thumbnail.self, forKey: .thumbnail)
     }
     

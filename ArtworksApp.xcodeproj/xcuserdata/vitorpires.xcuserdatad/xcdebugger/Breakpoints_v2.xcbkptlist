@@ -202,6 +202,36 @@
                   endingLineNumber = "14"
                   offsetFromSymbolStart = "198">
                </Location>
+               <Location
+                  uuid = "EA3C3BCE-06DB-484F-B09D-40618C444C09 - 470e549f88e355fa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for Domain.GetArtworksArtistUseCaseImpl.execute(with: Swift.Int) async throws -&gt; Domain.ArtworksArtistModelData"
+                  moduleName = "Domain"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vitorpires/Developer/ArtworksApp/Data/UseCases/GetArtworksArtistUseCaseImpl.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "157">
+               </Location>
+               <Location
+                  uuid = "EA3C3BCE-06DB-484F-B09D-40618C444C09 - 470e549f88e355fa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for Domain.GetArtworksArtistUseCaseImpl.execute(with: Swift.Int) async throws -&gt; Domain.ArtworksArtistModelData"
+                  moduleName = "Domain"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vitorpires/Developer/ArtworksApp/Data/UseCases/GetArtworksArtistUseCaseImpl.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "174">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -219,38 +249,239 @@
             endingLineNumber = "93"
             landmarkName = "body"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "5F5D7D36-B23C-4596-A268-41A57B0C8E17 - 75e0b289b01a589c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #2 @Sendable () async -&gt; () in Presentation.ArtworksListView.body.getter : some"
+                  moduleName = "Presentation"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vitorpires/Developer/ArtworksApp/Presentation/ArtworkListScene/ArtworksListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "5F5D7D36-B23C-4596-A268-41A57B0C8E17 - 4e04d4ec1a409c92"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #2 @Sendable () async -&gt; () in Presentation.ArtworksListView.body.getter : some"
+                  moduleName = "Presentation"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vitorpires/Developer/ArtworksApp/Presentation/ArtworkListScene/ArtworksListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "66">
+               </Location>
+               <Location
+                  uuid = "5F5D7D36-B23C-4596-A268-41A57B0C8E17 - 37b89e33954ce9b5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #2 @Sendable () async -&gt; () in Presentation.ArtworksListView.body.getter : some"
+                  moduleName = "Presentation"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vitorpires/Developer/ArtworksApp/Presentation/ArtworkListScene/ArtworksListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "34">
+               </Location>
+               <Location
+                  uuid = "5F5D7D36-B23C-4596-A268-41A57B0C8E17 - 75e0b289b01a589c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #2 @Sendable () async -&gt; () in Presentation.ArtworksListView.body.getter : some"
+                  moduleName = "Presentation"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vitorpires/Developer/ArtworksApp/Presentation/ArtworkListScene/ArtworksListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F247AF9E-FD67-4135-A782-6FA1816B73BD"
+            uuid = "F83E1B3F-AB90-4CB2-9763-DBE77AF1977F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Presentation/ArtworkListScene/ArtworksListView.swift"
+            filePath = "Presentation/ArtworkListScene/ViewModel/ArtworksListViewModelImpl.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "loadNextPage()"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "goToNextPage(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F83E1B3F-AB90-4CB2-9763-DBE77AF1977F - 3365e5e31c69833f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Presentation.ArtworksListViewModelImpl.goToNextPage(Swift.Optional&lt;Swift.String&gt;) async throws -&gt; ()"
+                  moduleName = "Presentation"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vitorpires/Developer/ArtworksApp/Presentation/ArtworkListScene/ViewModel/ArtworksListViewModelImpl.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "321">
+               </Location>
+               <Location
+                  uuid = "F83E1B3F-AB90-4CB2-9763-DBE77AF1977F - 97784ec63b641540"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for Presentation.ArtworksListViewModelImpl.goToNextPage(Swift.Optional&lt;Swift.String&gt;) async throws -&gt; ()"
+                  moduleName = "Presentation"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vitorpires/Developer/ArtworksApp/Presentation/ArtworkListScene/ViewModel/ArtworksListViewModelImpl.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "316">
+               </Location>
+               <Location
+                  uuid = "F83E1B3F-AB90-4CB2-9763-DBE77AF1977F - 97784ec63b641540"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for Presentation.ArtworksListViewModelImpl.goToNextPage(Swift.Optional&lt;Swift.String&gt;) async throws -&gt; ()"
+                  moduleName = "Presentation"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vitorpires/Developer/ArtworksApp/Presentation/ArtworkListScene/ViewModel/ArtworksListViewModelImpl.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "342">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F0A0F460-A796-48C3-B325-B1534C1BD4C3"
+            uuid = "E41A7329-7124-46A0-B9E7-CAC4731DDECF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Presentation/ArtworkListScene/ArtworksListView.swift"
+            filePath = "Presentation/ArtworkListScene/ViewModel/ArtworksListViewModelImpl.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "displayNoConnectionAlert()"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "goToNextPage(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E41A7329-7124-46A0-B9E7-CAC4731DDECF - fb693b3ee2025f90"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Presentation.ArtworksListViewModelImpl.goToNextPage(Swift.Optional&lt;Swift.String&gt;) async throws -&gt; ()"
+                  moduleName = "Presentation"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vitorpires/Developer/ArtworksApp/Presentation/ArtworkListScene/ViewModel/ArtworksListViewModelImpl.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "190">
+               </Location>
+               <Location
+                  uuid = "E41A7329-7124-46A0-B9E7-CAC4731DDECF - f4d9196beb392787"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for Presentation.ArtworksListViewModelImpl.goToNextPage(Swift.Optional&lt;Swift.String&gt;) async throws -&gt; ()"
+                  moduleName = "Presentation"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vitorpires/Developer/ArtworksApp/Presentation/ArtworkListScene/ViewModel/ArtworksListViewModelImpl.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "62">
+               </Location>
+               <Location
+                  uuid = "E41A7329-7124-46A0-B9E7-CAC4731DDECF - 3365e5e31c698392"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Presentation.ArtworksListViewModelImpl.goToNextPage(Swift.Optional&lt;Swift.String&gt;) async throws -&gt; ()"
+                  moduleName = "Presentation"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vitorpires/Developer/ArtworksApp/Presentation/ArtworkListScene/ViewModel/ArtworksListViewModelImpl.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "63">
+               </Location>
+               <Location
+                  uuid = "E41A7329-7124-46A0-B9E7-CAC4731DDECF - 97784ec63b6415ed"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for Presentation.ArtworksListViewModelImpl.goToNextPage(Swift.Optional&lt;Swift.String&gt;) async throws -&gt; ()"
+                  moduleName = "Presentation"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vitorpires/Developer/ArtworksApp/Presentation/ArtworkListScene/ViewModel/ArtworksListViewModelImpl.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "E41A7329-7124-46A0-B9E7-CAC4731DDECF - fb693b3ee2025f90"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Presentation.ArtworksListViewModelImpl.goToNextPage(Swift.Optional&lt;Swift.String&gt;) async throws -&gt; ()"
+                  moduleName = "Presentation"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vitorpires/Developer/ArtworksApp/Presentation/ArtworkListScene/ViewModel/ArtworksListViewModelImpl.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "192">
+               </Location>
+               <Location
+                  uuid = "E41A7329-7124-46A0-B9E7-CAC4731DDECF - 97784ec63b6415ed"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for Presentation.ArtworksListViewModelImpl.goToNextPage(Swift.Optional&lt;Swift.String&gt;) async throws -&gt; ()"
+                  moduleName = "Presentation"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vitorpires/Developer/ArtworksApp/Presentation/ArtworkListScene/ViewModel/ArtworksListViewModelImpl.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "134">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
